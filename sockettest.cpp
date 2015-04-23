@@ -11,7 +11,8 @@ void SocketTest::Connect()
     //connected
     socket = new QTcpSocket(this);
 
-    socket->connectToHost("google.com", 80); //random port treba na 80
+    socket->connectToHost("127.0.0.1", 1234); //nov komentar: port 1234 za tcp, na localhost
+                                            //stari komentari://random port treba na 80
                                             //sa nslookup vidis ip adresu ako je potrebno
 
     //ceka na konekcju 3000ms ili 3sec
