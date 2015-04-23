@@ -21,5 +21,8 @@ void MyServer::newConnection()
                                  socket->write("zdravo klijentelo moja!\r\n"); //pise nesto socketu i treba da salje sledecoj konekciji na redu
                                  socket->flush();
                                  socket->waitForBytesWritten(3000);
+                                 socket->waitForReadyRead(3000);
+                                 qDebug() << "poruka od klijenta:" << socket->bytesAvailable();
+                                 socket->readAll();
                                  socket->close();
 }
